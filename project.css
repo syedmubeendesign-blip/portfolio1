@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f7fb;
+    color:#222;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:rgba(15,23,42,.92);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#ffffff;
+    letter-spacing:1px;
+    cursor:pointer;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#ffffff;
+    font-size:16px;
+    font-weight:500;
+    transition:.3s;
+    position:relative;
+}
+
+nav ul li a:hover{
+    color:#60a5fa;
+}
+
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:#60a5fa;
+    transition:.3s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+/* ==========================
+   HERO SECTION
+========================== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:120px 8% 80px;
+    background:linear-gradient(135deg,#0f172a,#1d4ed8,#7c3aed);
+    color:#ffffff;
+}
+
+.hero-text{
+    max-width:600px;
+}
+
+.hero-text h1{
+    font-size:60px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.hero-text h2{
+    font-size:30px;
+    font-weight:500;
+    margin-bottom:20px;
+    color:#dbeafe;
+}
+
+.hero-text p{
+    font-size:18px;
+    color:#e2e8f0;
+    margin-bottom:35px;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 32px;
+    background:#2563eb;
+    color:#ffffff;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(37,99,235,.35);
+}
+
+.btn:hover{
+    background:#1d4ed8;
+    transform:translateY(-4px);
+}
+
+.btn-outline{
+    display:inline-block;
+    padding:14px 32px;
+    border:2px solid #ffffff;
+    color:#ffffff;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-outline:hover{
+    background:#ffffff;
+    color:#0f172a;
+}
+
+/* ==========================
+   HERO IMAGE
+========================== */
+
+.hero-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-image img{
+    width:380px;
+    height:380px;
+    object-fit:cover;
+    border-radius:50%;
+    border:8px solid rgba(255,255,255,.25);
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+}
+
+/* ==========================
+   COMMON SECTION
+========================== */
+
+section{
+    padding:90px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:60px;
+    color:#0f172a;
+    position:relative;
+}
+
+.section-title::after{
+    content:"";
+    width:80px;
+    height:4px;
+    background:#2563eb;
+    display:block;
+    margin:15px auto 0;
+    border-radius:50px;
+}
+/* ==========================================
+   ABOUT SECTION
+========================================== */
+
+.about-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:60px;
+    flex-wrap:wrap;
+}
+
+.about-image img{
+    width:350px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+    transition:.4s;
+}
+
+.about-image img:hover{
+    transform:scale(1.03);
+}
+
+.about-text{
+    max-width:650px;
+}
+
+.about-text h3{
+    font-size:34px;
+    color:#0f172a;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    font-size:18px;
+    color:#555;
+    margin-bottom:18px;
+    line-height:1.8;
+}
+
+/* ==========================================
+   PROJECTS
+========================================== */
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+}
+
+.project-card{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,.10);
+    transition:.35s;
+}
+
+.project-card:hover{
+    transform:translateY(-12px) scale(1.02);
+    box-shadow:0 25px 50px rgba(0,0,0,.18);
+}
+
+.project-image{
+    padding:20px;
+    background:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.project-image img{
+    width:auto;
+    height:auto;
+    max-width:100%;
+    max-height:700px;
+    object-fit:contain;
+    display:block;
+}
+
+.project-content{
+    padding:25px;
+}
+
+.project-content h3{
+    font-size:24px;
+    color:#0f172a;
+    margin-bottom:12px;
+}
+
+.project-content p{
+    color:#666;
+    line-height:1.7;
+}
+
+/* ==========================================
+   PDF PORTFOLIO
+========================================== */
+
+.pdf-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+}
+
+.pdf-card{
+    background:linear-gradient(135deg,#ffffff,#f3f7ff);
+    border-radius:20px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.10);
+    transition:.35s;
+    border:1px solid #dbeafe;
+}
+
+.pdf-card:hover{
+    transform:translateY(-10px) scale(1.03);
+}
+
+.pdf-card h3{
+    font-size:26px;
+    color:#0f172a;
+    margin:20px 0 15px;
+}
+
+.pdf-card p{
+    color:#666;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.pdf-btn{
+    display:inline-block;
+    padding:14px 28px;
+    background:#2563eb;
+    color:#fff;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.pdf-btn:hover{
+    background:#1d4ed8;
+    transform:scale(1.05);
+}
+/* ==========================================
+   CONTACT SECTION
+========================================== */
+
+#contact{
+    background:#0f172a;
+    color:#ffffff;
+}
+
+#contact .section-title{
+    color:#ffffff;
+}
+
+.contact-box{
+    max-width:700px;
+    margin:auto;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.20);
+}
+
+.contact-box p{
+    margin:15px 0;
+    font-size:18px;
+}
+
+.contact-box a{
+    color:#60a5fa;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.contact-box a:hover{
+    color:#ffffff;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+    background:#020617;
+    color:#cbd5e1;
+    text-align:center;
+    padding:25px;
+    font-size:16px;
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#e5e7eb;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#2563eb;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#1d4ed8;
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+.project-card,
+.pdf-card,
+.about-image img,
+.hero-image img{
+    animation:fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width:992px){
+
+header{
+    padding:18px 5%;
+}
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+    padding-top:140px;
+}
+
+.hero-text{
+    max-width:100%;
+}
+
+.hero-text h1{
+    font-size:46px;
+}
+
+.hero-text h2{
+    font-size:24px;
+}
+
+.hero-buttons{
+    justify-content:center;
+}
+
+.hero-image{
+    margin-top:40px;
+}
+
+.hero-image img{
+    width:300px;
+    height:300px;
+}
+
+.about-container{
+    flex-direction:column;
+    text-align:center;
+}
+
+.about-image img{
+    width:300px;
+}
+
+}
+
+@media (max-width:768px){
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.logo{
+    font-size:22px;
+}
+
+.hero-text h1{
+    font-size:38px;
+}
+
+.hero-text h2{
+    font-size:20px;
+}
+
+.hero-text p{
+    font-size:16px;
+}
+
+.section-title{
+    font-size:32px;
+}
+
+.project-grid,
+.pdf-grid{
+    grid-template-columns:1fr;
+}
+
+.contact-box{
+    padding:25px;
+}
+
+}
+
+@media (max-width:480px){
+
+.hero{
+    padding:120px 20px 60px;
+}
+
+section{
+    padding:70px 20px;
+    scroll-margin-top:90px;
+}
+
+.hero-image img{
+    width:240px;
+    height:240px;
+}
+
+.btn,
+.btn-outline,
+.pdf-btn{
+    width:100%;
+    text-align:center;
+}
+
+.contact-box p{
+    font-size:16px;
+}
+
+}
